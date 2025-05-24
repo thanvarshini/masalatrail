@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart</title>
+  <link rel="stylesheet" href="/assets/css/reservation.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-size: cover;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      background: linear-gradient(to right, #20c997, #6f42c1);
+      padding: 30px;
+      max-width: 700px;
+      margin: auto;
+      border-radius: 15px;
+      color: #fff;
+    }
+    .spice-row {
+      display: flex;
+      align-items: center;
+      margin: 8px 0;
+    }
+    .spice-row label {
+      flex: 1;
+    }
+    .spice-row input[type="number"] {
+      width: 60px;
+      margin-left: 10px;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: none;
+    }
+    #total {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-top: 20px;
+      color: yellow;
+    }
+    #pay-button {
+      background-color: #ffc107;
+      color: black;
+      font-weight: bold;
+      padding: 12px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+    #pay-button:hover {
+      background-color: #e0a800;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Cart</h2>
+  <form action="insert.php" method="POST" onsubmit="return payNow();">
+
+    <label>Email</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+    <h3>Select Spices</h3>
+    <div id="spices">
+      <div class="spice-row">
+        <label><input type="checkbox" name="spices[]" value="Cardamom" data-price="350" /> Cardamom - ₹350 (100g)</label>
+        <input type="number" name="quantity_Cardamom" value="0" min="0" disabled />
+      </div>
+      <div class="spice-row">
+        <label><input type="checkbox" name="spices[]" value="Black Pepper" data-price="80" /> Black Pepper - ₹80 (100g)</label>
+        <input type="number" name="quantity_Black_Pepper" value="0" min="0" disabled />
+      </div>
+      <div class="spice-row">
+        <label><input type="checkbox" name="spices[]" value="Clove" data-price="120" /> Clove - ₹120 (100g)</label>
+        <input type="number" name="quantity_Clove" value="0" min="0" disabled />
+      </div>
+      <div class="spice-row">
+        <label><input type="checkbox" name="spices[]" value="Cumin" data-price="35" /> Cumin - ₹35 (100g)</label>
+        <input type="number" name="quantity_Cumin" value="0" min="0" disabled />
+      </div>
+      <div class="spice-row">
+        <label><input type="checkbox" name="spices[]" value="Fennel" data-price="85" /> Fennel - ₹85 (100g)</label>
+        <input type="number" name="quantity_Fennel" value="0" min="0" disabled />
+      </div>
+      <div class="spice-row">
+        <label><input type="checkbox" name="spices[]" value="Cinnamon" data-price="40" /> Cinnamon - ₹40 (100g)</label>
+        <input type="number" name="quantity_Cinnamon" value="0" min="0" disabled />
+      </div>
+      <div class="spice-row">
+        <label><input type="checkbox" name="spices[]" value="Bay Leaves" data-price="199" /> Bay Leaves - ₹199 (100g)</label>
+        <input type="number" name="quantity_Bay_Leaves" value="0" min="0" disabled />
+      </div>
+      <div class="spice-row">
+        <label><input type="checkbox" name="spices[]" value="Fenugreek" data-price="249" /> Fenugreek - ₹249 (100g)</label>
+        <input type="number" name="quantity_Fenugreek" value="0" min="0" disabled />
+      </div>
+      <div class="spice-row">
+        <label><input type="checkbox" name="spices[]" value="Carom" data-price="299" /> Carom - ₹299 (100g)</label>
+        <input type="number" name="quantity_Carom" value="0" min="0" disabled />
+      </div>
+      <div class="spice-row">
+        <label><input type="checkbox" name="spices[]" value="Mustard" data-price="10" /> Mustard - ₹10 (100g)</label>
+        <input type="number" name="quantity_Mustard" value="0" min="0" disabled />
+      </div>
+      <div class="spice-row">
+        <label><input type="checkbox" name="spices[]" value="Star Anise" data-price="199" /> Star Anise - ₹199 (100g)</label>
+        <input type="number" name="quantity_Star_Anise" value="0" min="0" disabled />
+      </div>
+    </div>
+
+    <label>Delivery Address</label>
+    <textarea id="address" name="address" placeholder="Enter address" required></textarea>
+
+    <div id="total">Total Price: ₹0</div>
+
+    <button id="pay-button" type="submit">Pay on Delivery</button>
+  </form>
+</div>
+
+<script>
+  const spiceRows = document.querySelectorAll('.spice-row');
+
+  spiceRows.forEach(row => {
+    const checkbox = row.querySelector('input[type="checkbox"]');
+    const qtyInput = row.querySelector('input[type="number"]');
+
+    checkbox.addEventListener('change', () => {
+      qtyInput.disabled = !checkbox.checked;
+      if (!checkbox.checked) qtyInput.value = 0;
+      updateTotal();
+    });
+
+    qtyInput.addEventListener('input', updateTotal);
+  });
+
+  function updateTotal() {
+    let total = 0;
+    spiceRows.forEach(row => {
+      const checkbox = row.querySelector('input[type="checkbox"]');
+      const qtyInput = row.querySelector('input[type="number"]');
+      const price = parseInt(checkbox.dataset.price);
+
+      if (checkbox.checked) {
+        const qty = parseInt(qtyInput.value) || 0;
+        total += qty * price;
+      }
+    });
+    document.getElementById('total').textContent = 'Total Price: ₹' + total;
+  }
+
+  function payNow() {
+    const email = document.getElementById('email').value.trim();
+    const address = document.getElementById('address').value.trim();
+
+    if (!email || !address) {
+      alert("Please fill in your email and delivery address before proceeding.");
+      return false;
+    }
+
+    alert("Thank you! You can pay by cash on delivery.\nTracking details will be sent to " + email + ".");
+    return true;
+  }
+</script>
+
+</body>
+</html>

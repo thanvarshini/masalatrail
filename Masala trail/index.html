@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MasalaTrail</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+    <!-- external css -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- javascript file -->
+    <script src="./assets/js/script.js" defer></script>
+
+    <!-- Font Awesome link -->
+    <script src="https://kit.fontawesome.com/5289663089.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <section class="header-img">
+        <header class="header-main">
+            <nav class="nav-main">
+                <h1 class="main-title"><a href="#">MasalaTrail</a></h1>
+                <div class="openMenu"><i class="fa-solid fa-bars" style="color: #ff9d2e;"></i></div>
+                <ul class="nav-ul">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#menu">Spices</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="reservation.html">Cart</a></li>
+                    <li><div class="closeMenu"><i class="fa-solid fa-xmark"></i></div></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="header-context">
+            <h1>MasalaTrail</h1>
+            <h3 style="text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;"><span style="color: #FF8C00;">Cumin ,</span><span style="color: #33c933;">Cardamom</span><span style="color: white;"> & </span><span style="color: #FF0000;">Saffron</span></h3>
+        </div>
+    </section>
+
+    <!-- Promo Cards -->
+    <section id="promo-card">
+        <div class="promo-container">
+      
+          <!-- Step 1 -->
+          <div class="promo-card">
+            <i data-feather="shopping-bag" style="width: 60px; height: 60px; color: #ff9d2d;"></i>
+            <h3 class="h3-card-title">Step 1</h3>
+            <p class="card-text">Browse and select your favorite spices.</p>
+            <img src="./assets/images/search.jpg" width="200" height="200" alt="Spice Selection" class="promo-img">
+          </div>
+      
+          <!-- Step 2 -->
+          <div class="promo-card">
+            <i data-feather="shopping-cart" style="width: 60px; height: 60px; color: #ff9d2d;"></i>
+            <h3 class="h3-card-title">Step 2</h3>
+            <p class="card-text">Add the selected spices to your cart.</p>
+            <img src="./assets/images/cart.jpg" width="200" height="200" alt="Spice Cart" class="promo-img">
+          </div>
+      
+          <!-- Step 3 -->
+          <div class="promo-card">
+            <i data-feather="user" style="width: 60px; height: 60px; color: #ff9d2d;"></i>
+            <h3 class="h3-card-title">Step 3</h3>
+            <p class="card-text">Enter your delivery information.</p>
+            <img src="./assets/images/delivery.jpg" width="200" height="200" alt="User Info" class="promo-img">
+          </div>
+      
+          <!-- Step 4 -->
+          <div class="promo-card">
+            <i data-feather="check-circle" style="width: 60px; height: 60px; color: #ff9d2d;"></i>
+            <h3 class="h3-card-title">Step 4</h3>
+            <p class="card-text">Confirm and place your order.</p>
+            <img src="./assets/images/ordernow.jpg" width="200" height="200" alt="Order Confirmed" class="promo-img">
+          </div>
+      
+        </div>
+      </section>
+    <!-- Menu Items -->
+    <section id="menu" style="padding-top: 48px;">
+        <div class="menu-header">
+            <h4 class="subhead">Our Dishes</h4>
+            <h1 class="Heading">Trendy <span style="color:  rgb(255, 196, 0);">Foods</span></h1>
+            <p class="Discription">Order our spices </p>
+        </div>
+
+        <!-- All Dishes -->
+        <div class="allitems">
+            <div class="Items">
+                <img class="dishpic" src="./assets/images/cardamom.jpg" alt="">
+                <h3 class="Dish">Cardamom (100g)</h3>
+                <p class="price-tag">Price: ₹350</p>
+                <br>
+                <button type="button" class="btn" onclick="show_alert()"><a>Buy Now</a></button>
+            </div>
+
+            <div class="Items">
+                <img class="dishpic" src="./assets/images/blackpeper.jpg" alt="">
+                <h3 class="Dish">Black peper (100g)</h3>
+                <p class="price-tag">Price: ₹80</p>
+                <br>
+                <button type="button" class="btn" onclick="show_alert()"><a>Buy Now</a></button>
+            </div>
+
+            <div class="Items">
+                <img class="dishpic" src="./assets/images/clove.jpg" alt="">
+                <h3 class="Dish">Clove (100g)</h3>
+                <p class="price-tag">Price: ₹120</p>
+                <br>
+                <button type="button" class="btn" onclick="show_alert()"><a>Buy Now</a></button>
+            </div>
+
+
+            <div class="Items">
+                <img class="dishpic" src="./assets/images/cumin.jpg" alt="">
+                <h3 class="Dish">Cumin (100g)</h3>
+                <p class="price-tag">Price: ₹35</p>
+                <br>
+                <button type="button" class="btn" onclick="show_alert()"><a>Buy Now</a></button>
+            </div>
+
+            <div class="Items">
+                <img class="dishpic" src="./assets/images/fennel.jpg" alt="">
+                <h3 class="Dish">Fennel (100g)</h3>
+                <p class="price-tag">Price: ₹85</p>
+                <br>
+                <button type="button" class="btn" onclick="show_alert()"><a>Buy Now</a></button>
+            </div>
+
+            <div class="Items">
+                <img class="dishpic" src="./assets/images/cinnamon.jpg" alt="">
+                <h3 class="Dish">Cinnamon (100g)</h3>
+                <p class="price-tag">Price: ₹40</p>
+                <br>
+                <button type="button" class="btn" onclick="show_alert()"><a>Buy Now</a></button>
+            </div>
+
+            <div class="Items">
+                <img class="dishpic" src="./assets/images/bayleaves.jpg" alt="">
+                <h3 class="Dish">Bay leaves(100g)</h3>
+                <p class="price-tag">Price: ₹199</p>
+                <br>
+                <button type="button" class="btn" onclick="show_alert()"><a>Buy Now</a></button>
+            </div>
+
+            <div class="Items">
+                <img class="dishpic" src="./assets/images/fenugreek.jpg" alt="">
+                <h3 class="Dish">Fenugreek (100g)</h3>
+                <p class="price-tag">Price: ₹249</p>
+                <br>
+                <button type="button" class="btn" onclick="show_alert()"><a>Buy Now</a></button>
+            </div>
+
+            <div class="Items">
+                <img class="dishpic" src="./assets/images/carom.jpg" alt="">
+                <h3 class="Dish">Carom (100g)</h3>
+                <p class="price-tag">Price: ₹299</p>
+                <br>
+                <button type="button" class="btn"><a>Buy Now</a></button>
+            </div>
+
+            <div class="Items">
+                <img class="dishpic" src="./assets/images/mustard.jpg" alt="">
+                <h3 class="Dish">Mustard (100g)</h3>
+                <p class="price-tag">Price: ₹10</p>
+                <br>
+                <button type="button" class="btn" onclick="show_alert()"><a>Buy Now</a></button>
+            </div>
+
+            <div class="Items">
+                <img class="dishpic" src="./assets/images/kapokbubs.jpg" alt="">
+                <h3 class="Dish">Kapok Buds(100g)</h3>
+                <p class="price-tag">Price: ₹199</p>
+                <br>
+                <button type="button" class="btn"><a>Buy Now</a></button>
+            </div>
+
+            <div class="Items">
+                <img class="dishpic" src="./assets/images/staranise.jpg" alt="">
+                <h3 class="Dish">Star Anise (100g)</h3>
+                <p class="price-tag">Price: ₹199</p>
+                <br>
+                <button type="button" class="btn" onclick="show_alert()"><a>Buy Now</a></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Review -->
+    <section>
+        <div class="testimonials">
+            <div class="inner">
+                <h1>Our Customer Reviews</h1>
+                <div class="inner-border"></div>
+    
+                <div class="row">
+                    <div class="col">
+                        <div class="testimonial">
+                            <img src="./assets/images/p1.jpg" alt="Jeff_Bezos">
+                            <div class="name">Negami<br> Office Worker
+                            </div>
+                                <hr>
+                            <div class="star">
+                                <i class="fa-sharp fa-solid fa-star"></i>
+                                <i class="fa-sharp fa-solid fa-star"></i>
+                                <i class="fa-sharp fa-solid fa-star"></i>
+                                <i class="fa-sharp fa-solid fa-star"></i>
+                                <i class="fa-sharp fa-solid fa-star"></i>
+                            </div>
+                            <p>"Absolutely love the freshness of the spices! The turmeric and cumin I ordered had such a rich aroma — way better than store-bought.
+                                Packaging was neat and eco-friendly too. Will definitely order again!"</p>
+                        </div>
+                    </div>
+    
+                    <div class="col">
+                        <div class="testimonial">
+                            <img src="./assets/images/p2.jpg" alt="Steve_Ballmer">
+                            <div class="name">Steve <br> Business
+                            </div>
+                                <hr>
+                            <div class="star">
+                                <i class="fa-sharp fa-solid fa-star"></i>
+                                <i class="fa-sharp fa-solid fa-star"></i>
+                                <i class="fa-sharp fa-solid fa-star"></i>
+                                <i class="fa-sharp fa-solid fa-star"></i>
+                                <i class="fa-sharp fa-solid fa-star"></i>
+                            </div>
+                            <p>"I tried their masala combo pack and wow — my cooking has leveled up! The flavors are authentic and remind me of my grandma’s kitchen. 
+                                Shipping was quick, and everything arrived in perfect condition."</p>
+                        </div>
+                    </div>
+    
+                    <div class="col">
+                        <div class="testimonial">
+                            <img src="./assets/images/p3.jpg" alt="google_ceo">
+                            <div class="name">Karthi<br> Business
+                            </div>
+                                <hr>
+                            <div class="star">
+                                <i class="fa-sharp fa-solid fa-star"></i>
+                                <i class="fa-sharp fa-solid fa-star"></i>
+                                <i class="fa-sharp fa-solid fa-star"></i>
+                                <i class="fa-sharp fa-solid fa-star"></i>
+                                <i class="fa-sharp fa-solid fa-star"></i>
+                            </div>
+                            <p>"Great quality at a reasonable price.I especially liked the freshly
+                                ground garam masala. Just wish there were more bulk options for 
+                                frequent buyers like me"</p>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-row">
+            <div class="footer-col">
+                <h4 class="footer-title">company</h4>
+                <ul>
+                    <li><a href="about.html">about us</a></li>
+                    <li><a href="#">our services</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                    <li><a href="#">trademark</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">get help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">delivery</a></li>
+                    <li><a href="#">returns</a></li>
+                    <li><a href="#">order status</a></li>
+                    <li><a href="#">payment options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">follow us</h4>
+                <div class="social-links">
+                    <a href="#" title="FaceBook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </footer>
+
+</body>
+</html>

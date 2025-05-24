@@ -1,0 +1,110 @@
+body {
+    color: white;
+    background-image: url("../images/b1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: red;
+}
+
+.container {
+    background: linear-gradient(to right, rgba(32,201,151,0.9), rgba(111,66,193,0.9));
+    padding: 30px;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 15px;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.1);
+}
+
+.spice-option {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px;
+    border: 2px solid white;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.spice-option:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#total {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+    color: yellow;
+    text-align: center;
+}
+
+#payButton {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    display: block;
+    margin: 20px auto 0;
+    transition: background-color 0.3s ease;
+}
+
+#payButton:hover {
+    background-color: #e68900;
+}
+
+#confirmationMessage {
+    text-align: center;
+    margin-top: 15px;
+    background-color: rgba(0, 128, 0, 0.2);
+    border: 2px solid #4CAF50;
+    padding: 15px;
+    border-radius: 10px;
+    display: none;
+    color: #fff;
+    font-weight: bold;
+}
